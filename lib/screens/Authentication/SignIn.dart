@@ -14,11 +14,12 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.teal[900],
+        /*
       appBar: AppBar(
-        backgroundColor: Color(0xFFFBB03B),
+        backgroundColor: Color(0xFF08091C),
         elevation: 0.0,
         title: Text('Sign In '),
-      ),
+      ),*/
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
@@ -31,7 +32,7 @@ class _SignInState extends State<SignIn> {
           child: Center(
             child:
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 100.0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 150.0, 0, 0),
               child: Column(
                 children:<Widget> [
 
