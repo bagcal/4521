@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'What is this? AX 123'),
     );
-    
   }
 }
 
