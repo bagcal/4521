@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'Wrapper.dart';
+import 'package:provider/provider.dart';
+import 'package:tarot4521/Services/User.dart';
+
 
 class OpeningScreen extends StatefulWidget {
   @override
@@ -9,6 +12,10 @@ class OpeningScreen extends StatefulWidget {
 class _OpeningScreenState extends State<OpeningScreen> {
   @override
   Widget build(BuildContext context) {
+
+    final user = Provider.of<User>(context);
+    print(user);
+
     return Scaffold(
       backgroundColor: Colors.teal[900],
       body: SafeArea(
@@ -50,18 +57,6 @@ class _OpeningScreenState extends State<OpeningScreen> {
                     ), )
                   ),
 
-                 /* FlatButton(
-                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                      color: Color(0xFFFBB03B),
-                      onPressed: (){},
-                      child: Text('Sign In',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Elsie',
-                          fontSize: 20,
-
-                        ), )
-                  ),*/
                 ],
               ),
             ),
