@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "723927448719",
+    "project_id": "tarot-d100f",
+    "storage_bucket": "tarot-d100f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723927448719:android:55567caf0e6fdb725f04fa",
+        "android_client_info": {
+          "package_name": "com.example.tarot4521"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723927448719-4q96aifqavh0t3j5ehi2qgqhjvvsftdi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW3PkFlah2dpGgiQNtmdR1xhc-snvsRBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723927448719-4q96aifqavh0t3j5ehi2qgqhjvvsftdi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
