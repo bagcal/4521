@@ -1,5 +1,7 @@
 import 'package:tarot4521/Services/Auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tarot4521/screens/scam.dart';
+import 'package:tarot4521/screens/Quiz.dart';
 
 class Home extends StatelessWidget {
 
@@ -36,16 +38,38 @@ class Home extends StatelessWidget {
           ),
 
           child: Center(
-            child: Padding( padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+            child: Padding( padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
             child: Column(
               children: <Widget> [
                 IconButton(
+                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 0) ,
                   splashColor: Colors.black,
                   icon: Image.asset('images/newReading.png'),
                   iconSize: 350,
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Scam()),
+                    );
                   },
+                ),
+
+                FlatButton(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    color: Color(0xFFFBB03B),
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Quiz()),
+                      );
+                      },
+                    child: Text('Browse Cards',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Elsie',
+                        fontSize: 20,
+
+                      ), )
                 ),
 
 

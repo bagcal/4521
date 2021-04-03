@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tarot4521/screens/OpeningScreen.dart';
+import 'package:tarot4521/screens/Quiz.dart';
 import 'package:tarot4521/screens/Wrapper.dart';
 import 'package:tarot4521/screens/Authentication/authenticate.dart';
 import 'package:provider/provider.dart';
 import 'package:tarot4521/Services/User.dart';
 import 'package:tarot4521/Services/Auth.dart';
+import 'package:tarot4521/screens/scam.dart';
 
 
 void main() {
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: OpeningScreen(),
+       home: OpeningScreen(),
+
       ),
 
 
