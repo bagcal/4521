@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'Wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:tarot4521/Services/User.dart';
-
+import 'package:tarot4521/screens/musictest.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class OpeningScreen extends StatefulWidget {
   @override
@@ -10,8 +12,36 @@ class OpeningScreen extends StatefulWidget {
 }
 
 class _OpeningScreenState extends State<OpeningScreen> {
-  @override
-  Widget build(BuildContext context) {
+/*
+  Duration _duration = new Duration();
+  Duration _position = new Duration();
+  AudioPlayer advancedPlayer;
+  AudioCache audioCache;
+
+    @override
+    void initState() {
+      super.initState();
+      initPlayer();
+      advancedPlayer.setVolume(0.5);
+      audioCache.play('song3.mp3');
+    }
+
+    void initPlayer() {
+      advancedPlayer = new AudioPlayer();
+
+      audioCache = new AudioCache(fixedPlayer: advancedPlayer);
+
+      advancedPlayer.durationHandler = (d) => setState(() {
+        _duration = d;
+      });
+
+      advancedPlayer.positionHandler = (p) => setState(() {
+        _position = p;
+      });
+    }
+*/
+    @override
+    Widget build(BuildContext context) {
 
     final user = Provider.of<User>(context);
     print(user);
@@ -56,6 +86,28 @@ class _OpeningScreenState extends State<OpeningScreen> {
 
                     ), )
                   ),
+
+
+                  FlatButton(
+                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                      color: Color(0xFFFBB03B),
+                      onPressed: (){
+                       // advancedPlayer.stop();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LocalAudio()),
+                        );},
+                      child: Text('play',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Elsie',
+                          fontSize: 25,
+
+
+                        ), )
+                  ),
+
+
 
                 ],
               ),
