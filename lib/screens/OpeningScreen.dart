@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarot4521/screens/Meditate.dart';
 import 'Wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:tarot4521/Services/User.dart';
@@ -99,25 +98,6 @@ class _OpeningScreenState extends State<OpeningScreen> {
                           MaterialPageRoute(builder: (context) => LocalAudio()),
                         );},
                       child: Text('play',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Elsie',
-                          fontSize: 25,
-
-
-                        ), )
-                  ),
-
-                  FlatButton(
-                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                      color: Color(0xFFFBB03B),
-                      onPressed: (){
-                        // advancedPlayer.stop();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Meditate()),
-                        );},
-                      child: Text('Meditate',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Elsie',

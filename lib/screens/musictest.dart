@@ -297,104 +297,78 @@ class _LocalAudio extends State<LocalAudio> {
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
 
-    return WillPopScope(
-      onWillPop: () async => false,
+    return DefaultTabController(
+      length: 1,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Color(0xFF08091C),
+          title: Text('Your Reading'),
+        ),
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/openingBG.png'),
+                fit: BoxFit.cover,
+              )
+          ) ,
+          child: Column(
 
-      child: DefaultTabController(
-        length: 1,
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            elevation: 0.0,
-            backgroundColor: Color(0xFF08091C),
-            title: Text('Your Reading'),
-            actions: <Widget>[
-              FlatButton.icon(
-                icon: Icon(Icons.person, color: Colors.white,),
-                label: Text('logout', style: TextStyle(color: Colors.white,),),
-                onPressed: ()  {
-                  Navigator.popUntil(context, ModalRoute.withName('/'));
-                },
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
 
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg', width: queryData.size.width/4.5,),
+                    Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg', width: queryData.size.width/4.5,),
+                    Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg',  width: queryData.size.width/4.5,),
+                    Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg',  width: queryData.size.width/4.5,),
 
-              FlatButton.icon(
-                icon: Icon(Icons.home, color: Colors.white,),
-                label: Text('Home', style: TextStyle(color: Colors.white,),),
-                onPressed: ()  {
-                  Navigator.popUntil(context, ModalRoute.withName('/home'));
-                },
+                  ]
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+
+              LocalAudio(),
+/*
+              FlatButton(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                  color: Color(0xFFFBB03B),
+                  onPressed: (){ audioCache.play('song3.mp3'); },
+                  child: Text('play',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Elsie',
+                      fontSize: 25,
+
+
+                    ), )
+              ),
+*/
+          Center(
+            child: Container(
+                margin: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height * 0.02 , 0, 0),
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                color: Color(0xFFFAF7EA),
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.35 ,
+
+                child: SingleChildScrollView(
+                  child: Text("here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+                  style: TextStyle(fontSize: 15),),
+
+
+
+            )
+            ),
+          )
 
             ],
-          ),
-          body: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/openingBG.png'),
-                  fit: BoxFit.cover,
-                )
-            ) ,
-            child: Column(
-
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                ),
-
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-
-
-                      Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg', width: queryData.size.width/4.5,),
-                      Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg', width: queryData.size.width/4.5,),
-                      Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg',  width: queryData.size.width/4.5,),
-                      Image.network('https://cdn.thetarotlady.com/wp-content/uploads/2018/12/fool.jpg',  width: queryData.size.width/4.5,),
-
-                    ]
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                ),
-
-                LocalAudio(),
-/*
-                FlatButton(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                    color: Color(0xFFFBB03B),
-                    onPressed: (){ audioCache.play('song3.mp3'); },
-                    child: Text('play',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Elsie',
-                        fontSize: 25,
-
-
-                      ), )
-                ),
-*/
-            Center(
-              child: Container(
-                  margin: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height * 0.02 , 0, 0),
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  color: Color(0xFFFAF7EA),
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: MediaQuery.of(context).size.height * 0.35 ,
-
-                  child: SingleChildScrollView(
-                    child: Text("here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-                    style: TextStyle(fontSize: 15),),
-
-
-
-              )
-              ),
-            )
-
-              ],
-            ),
           ),
         ),
       ),
